@@ -97,57 +97,92 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  // Load user function
+  // Load user function (MOCK - funciona sem backend)
   const loadUser = async () => {
     try {
       dispatch({ type: AUTH_ACTIONS.LOAD_USER_START });
       
-      const response = await axios.get('/api/auth/me');
+      // Simular delay de rede
+      await new Promise(resolve => setTimeout(resolve, 500));
       
-      if (response.data.success) {
-        dispatch({
-          type: AUTH_ACTIONS.LOAD_USER_SUCCESS,
-          payload: response.data.data,
-        });
-      } else {
-        dispatch({ type: AUTH_ACTIONS.LOAD_USER_FAILURE });
-      }
+      // Usuário mock padrão (admin)
+      const mockUser = {
+        id: 1,
+        nome: 'Administrador',
+        email: 'admin@crosby.com.br',
+        role: 'admin',
+        departamento: 'TI',
+        avatar: null,
+        ativo: true,
+        createdAt: new Date().toISOString(),
+      };
+      
+      dispatch({
+        type: AUTH_ACTIONS.LOAD_USER_SUCCESS,
+        payload: mockUser,
+      });
     } catch (error) {
       console.error('Erro ao carregar usuário:', error);
       dispatch({ type: AUTH_ACTIONS.LOAD_USER_FAILURE });
     }
   };
 
-  // Login function
+  // Login function (MOCK - funciona sem backend)
   const login = async (email, password) => {
     try {
       dispatch({ type: AUTH_ACTIONS.LOGIN_START });
       
-      const response = await axios.post('/api/auth/login', {
-        email,
-        password,
-      });
+      // Simular delay de rede
+      await new Promise(resolve => setTimeout(resolve, 1000));
       
-      if (response.data.success) {
+      // Dados mock para login
+      const mockUsers = {
+        'admin@crosby.com.br': {
+          user: {
+            id: 1,
+            nome: 'Administrador',
+            email: 'admin@crosby.com.br',
+            role: 'admin',
+            departamento: 'TI',
+            avatar: null,
+            ativo: true,
+            createdAt: new Date().toISOString(),
+          },
+          token: 'mock-jwt-token-' + Date.now(),
+        },
+        'gerente@crosby.com.br': {
+          user: {
+            id: 2,
+            nome: 'Gerente',
+            email: 'gerente@crosby.com.br',
+            role: 'gerente',
+            departamento: 'Vendas',
+            avatar: null,
+            ativo: true,
+            createdAt: new Date().toISOString(),
+          },
+          token: 'mock-jwt-token-' + Date.now(),
+        }
+      };
+      
+      // Verificar credenciais
+      if (mockUsers[email] && password === 'admin123') {
         dispatch({
           type: AUTH_ACTIONS.LOGIN_SUCCESS,
-          payload: response.data.data,
+          payload: mockUsers[email],
         });
         
         toast.success('Login realizado com sucesso!');
         return { success: true };
       } else {
         dispatch({ type: AUTH_ACTIONS.LOGIN_FAILURE });
-        toast.error(response.data.error || 'Erro no login');
-        return { success: false, error: response.data.error };
+        toast.error('Email ou senha incorretos');
+        return { success: false, error: 'Credenciais inválidas' };
       }
     } catch (error) {
       dispatch({ type: AUTH_ACTIONS.LOGIN_FAILURE });
-      
-      const errorMessage = error.response?.data?.error || 'Erro no servidor';
-      toast.error(errorMessage);
-      
-      return { success: false, error: errorMessage };
+      toast.error('Erro interno do sistema');
+      return { success: false, error: 'Erro interno' };
     }
   };
 
