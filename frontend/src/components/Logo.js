@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Logo = ({ size = 'md', variant = 'full', className = '' }) => {
   // Tamanhos disponíveis
@@ -9,31 +9,17 @@ const Logo = ({ size = 'md', variant = 'full', className = '' }) => {
     xl: 'h-16 w-16',
   };
 
-  // Se você tiver a logo em arquivo
-  const hasLogoImage = true; // Mude para true quando adicionar a logo
+  // Estado para controlar se a logo carregou
+  const [logoError, setLogoError] = useState(false);
 
-  if (hasLogoImage) {
-    return (
-      <img
-        src="/logo.png" // ou /logo.svg
-        alt="CROSBY Logo"
-        className={`${sizes[size]} ${className}`}
-      />
-    );
-  }
+  // Fallback: Quadrado vermelho com C
+  const FallbackIcon = () => (
+    <div className={`${sizes[size]} rounded bg-crosby-600 dark:bg-crosby-500 flex items-center justify-center ${className}`}>
+      <span className="text-white font-bold text-sm">C</span>
+    </div>
+  );
 
-  // Fallback: Quadrado vermelho com C (atual)
-  // Você pode manter isso até ter a logo definitiva
-  if (variant === 'icon') {
-    return (
-      <div className={`${sizes[size]} rounded bg-crosby-600 dark:bg-crosby-500 flex items-center justify-center ${className}`}>
-        <span className="text-white font-bold text-sm">C</span>
-      </div>
-    );
-  }
-
-  // Versão completa com texto
-  return (
+  const FallbackFull = () => (
     <div className={`flex items-center space-x-2 ${className}`}>
       <div className={`${sizes[size]} rounded bg-crosby-600 dark:bg-crosby-500 flex items-center justify-center`}>
         <span className="text-white font-bold text-sm">C</span>
@@ -44,6 +30,22 @@ const Logo = ({ size = 'md', variant = 'full', className = '' }) => {
         </span>
       )}
     </div>
+  );
+
+  // Se houve erro ao carregar a logo, mostrar fallback
+  if (logoError) {
+    return variant === 'icon' ? <FallbackIcon /> : <FallbackFull />;
+  }
+
+  // Tentar carregar a logo
+  return (
+    <img
+      src="./logo.png"
+      alt="CROSBY Logo"
+      className={`${sizes[size]} ${className}`}
+      onError={() => setLogoError(true)}
+      onLoad={() => setLogoError(false)}
+    />
   );
 };
 
