@@ -2,7 +2,6 @@ import React from 'react';
 import { Menu, Bell, User, LogOut, Moon, Sun } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useTheme } from '../contexts/ThemeContext';
-import Logo from './Logo';
 
 const Header = ({ onMenuClick }) => {
   const { user, logout } = useAuth();
@@ -29,8 +28,7 @@ const Header = ({ onMenuClick }) => {
               <Menu className="h-6 w-6" aria-hidden="true" />
             </button>
             
-            <div className="hidden lg:flex lg:items-center lg:space-x-4">
-              <Logo size="md" variant="icon" />
+            <div className="hidden lg:flex lg:items-center">
               <div>
                 <h1 className="text-xl font-semibold text-gray-900 dark:text-white">
                   Sistema de Controle de Estoque
