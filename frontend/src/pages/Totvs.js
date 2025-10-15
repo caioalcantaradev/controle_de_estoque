@@ -58,8 +58,8 @@ const Totvs = () => {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Integração TOTVS</h1>
-        <p className="mt-1 text-sm text-gray-500">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Integração TOTVS</h1>
+        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
           Sincronize dados entre o sistema e o TOTVS MODA
         </p>
       </div>
@@ -73,10 +73,10 @@ const Totvs = () => {
                 <Database className="h-8 w-8 text-blue-600" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                   Status da Conexão
                 </h3>
-                <p className="text-sm text-gray-500 mt-1">
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                   {connectionStatus?.success 
                     ? 'Conectado ao TOTVS MODA'
                     : 'Conexão não testada'}
@@ -125,12 +125,12 @@ const Totvs = () => {
       {/* Sync Options */}
       <div className="card">
         <div className="p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
             Opções de Sincronização
           </h3>
           
           <div className="space-y-4">
-            <label className="flex items-start p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+            <label className="flex items-start p-4 border rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
               <input
                 type="radio"
                 name="syncType"
@@ -140,16 +140,16 @@ const Totvs = () => {
                 className="mt-1 h-4 w-4 text-primary-600 focus:ring-primary-500"
               />
               <div className="ml-3">
-                <div className="text-sm font-medium text-gray-900">
+                <div className="text-sm font-medium text-gray-900 dark:text-white">
                   Sincronização Completa
                 </div>
-                <div className="text-sm text-gray-500 mt-1">
+                <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                   Sincroniza produtos e estoque do TOTVS MODA
                 </div>
               </div>
             </label>
 
-            <label className="flex items-start p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+            <label className="flex items-start p-4 border rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
               <input
                 type="radio"
                 name="syncType"
@@ -159,16 +159,16 @@ const Totvs = () => {
                 className="mt-1 h-4 w-4 text-primary-600 focus:ring-primary-500"
               />
               <div className="ml-3">
-                <div className="text-sm font-medium text-gray-900">
+                <div className="text-sm font-medium text-gray-900 dark:text-white">
                   Apenas Produtos
                 </div>
-                <div className="text-sm text-gray-500 mt-1">
+                <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                   Sincroniza somente o catálogo de produtos
                 </div>
               </div>
             </label>
 
-            <label className="flex items-start p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+            <label className="flex items-start p-4 border rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
               <input
                 type="radio"
                 name="syncType"
@@ -178,10 +178,10 @@ const Totvs = () => {
                 className="mt-1 h-4 w-4 text-primary-600 focus:ring-primary-500"
               />
               <div className="ml-3">
-                <div className="text-sm font-medium text-gray-900">
+                <div className="text-sm font-medium text-gray-900 dark:text-white">
                   Apenas Estoque
                 </div>
-                <div className="text-sm text-gray-500 mt-1">
+                <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                   Atualiza as quantidades de estoque
                 </div>
               </div>
@@ -231,24 +231,24 @@ const Totvs = () => {
       {/* Last Sync Info */}
       <div className="card">
         <div className="p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
             Última Sincronização
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <div className="text-sm text-gray-500">Data/Hora</div>
-              <div className="text-base font-medium text-gray-900 mt-1">
+              <div className="text-sm text-gray-500 dark:text-gray-400">Data/Hora</div>
+              <div className="text-base font-medium text-gray-900 dark:text-white mt-1">
                 {new Date().toLocaleString('pt-BR')}
               </div>
             </div>
             <div>
-              <div className="text-sm text-gray-500">Produtos Sincronizados</div>
-              <div className="text-base font-medium text-gray-900 mt-1">
+              <div className="text-sm text-gray-500 dark:text-gray-400">Produtos Sincronizados</div>
+              <div className="text-base font-medium text-gray-900 dark:text-white mt-1">
                 150 produtos
               </div>
             </div>
             <div>
-              <div className="text-sm text-gray-500">Status</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">Status</div>
               <div className="mt-1">
                 <span className="badge badge-success">Sucesso</span>
               </div>
