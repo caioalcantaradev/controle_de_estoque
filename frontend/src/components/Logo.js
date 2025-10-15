@@ -56,7 +56,7 @@ const Logo = ({ size = 'md', variant = 'full', className = '' }) => {
   // Tentar carregar a logo
   return (
     <img
-      src="./logo.png"
+      src="/controle_de_estoque/logo.png"
       alt="CROSBY Logo"
       className={`${sizes[size]} ${className}`}
       onError={() => setLogoError(true)}
