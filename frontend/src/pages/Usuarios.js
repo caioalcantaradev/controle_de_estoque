@@ -42,8 +42,8 @@ const Usuarios = () => {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Usuários</h1>
-          <p className="mt-1 text-sm text-gray-500">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Usuários</h1>
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
             Gerencie os usuários do sistema
           </p>
         </div>
@@ -62,8 +62,8 @@ const Usuarios = () => {
                 <Users className="h-8 w-8 text-primary-600" />
               </div>
               <div className="ml-4">
-                <div className="text-sm text-gray-500">Total</div>
-                <div className="text-2xl font-semibold text-gray-900">
+                <div className="text-sm text-gray-500 dark:text-gray-400">Total</div>
+                <div className="text-2xl font-semibold text-gray-900 dark:text-white">
                   {usuarios?.length || 0}
                 </div>
               </div>
@@ -78,8 +78,8 @@ const Usuarios = () => {
                 <UserCheck className="h-8 w-8 text-green-600" />
               </div>
               <div className="ml-4">
-                <div className="text-sm text-gray-500">Ativos</div>
-                <div className="text-2xl font-semibold text-gray-900">
+                <div className="text-sm text-gray-500 dark:text-gray-400">Ativos</div>
+                <div className="text-2xl font-semibold text-gray-900 dark:text-white">
                   {usuarios?.filter(u => u.ativo).length || 0}
                 </div>
               </div>
@@ -94,8 +94,8 @@ const Usuarios = () => {
                 <UserX className="h-8 w-8 text-red-600" />
               </div>
               <div className="ml-4">
-                <div className="text-sm text-gray-500">Inativos</div>
-                <div className="text-2xl font-semibold text-gray-900">
+                <div className="text-sm text-gray-500 dark:text-gray-400">Inativos</div>
+                <div className="text-2xl font-semibold text-gray-900 dark:text-white">
                   {usuarios?.filter(u => !u.ativo).length || 0}
                 </div>
               </div>
@@ -110,8 +110,8 @@ const Usuarios = () => {
                 <Users className="h-8 w-8 text-orange-600" />
               </div>
               <div className="ml-4">
-                <div className="text-sm text-gray-500">Admins</div>
-                <div className="text-2xl font-semibold text-gray-900">
+                <div className="text-sm text-gray-500 dark:text-gray-400">Admins</div>
+                <div className="text-2xl font-semibold text-gray-900 dark:text-white">
                   {usuarios?.filter(u => u.role === 'admin').length || 0}
                 </div>
               </div>
@@ -157,7 +157,7 @@ const Usuarios = () => {
                 <tr>
                   <td colSpan="6" className="table-cell text-center py-12">
                     <Users className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                    <p className="text-gray-500">Nenhum usuário encontrado</p>
+                    <p className="text-gray-500 dark:text-gray-400">Nenhum usuário encontrado</p>
                   </td>
                 </tr>
               ) : (
@@ -171,13 +171,13 @@ const Usuarios = () => {
                           </span>
                         </div>
                         <div className="ml-4">
-                          <div className="text-sm font-medium text-gray-900">
+                          <div className="text-sm font-medium text-gray-900 dark:text-white">
                             {usuario.nome}
                           </div>
                         </div>
                       </div>
                     </td>
-                    <td className="table-cell text-gray-500">
+                    <td className="table-cell text-gray-500 dark:text-gray-400">
                       {usuario.email}
                     </td>
                     <td className="table-cell">
@@ -185,7 +185,7 @@ const Usuarios = () => {
                         {usuario.role}
                       </span>
                     </td>
-                    <td className="table-cell capitalize text-gray-500">
+                    <td className="table-cell capitalize text-gray-500 dark:text-gray-400">
                       {usuario.departamento}
                     </td>
                     <td className="table-cell">

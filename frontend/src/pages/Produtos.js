@@ -44,8 +44,8 @@ const Produtos = () => {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Produtos</h1>
-          <p className="mt-1 text-sm text-gray-500">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Produtos</h1>
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
             Gerencie o catálogo de produtos da CROSBY
           </p>
         </div>
@@ -87,7 +87,7 @@ const Produtos = () => {
         {produtos?.length === 0 ? (
           <div className="col-span-full flex flex-col items-center justify-center py-12">
             <Package className="h-12 w-12 text-gray-400 mb-4" />
-            <p className="text-gray-500">Nenhum produto encontrado</p>
+            <p className="text-gray-500 dark:text-gray-400">Nenhum produto encontrado</p>
             <button
               onClick={handleAddProduct}
               className="mt-4 btn-primary btn-md"
@@ -120,15 +120,15 @@ const Produtos = () => {
                   </div>
                 </div>
                 
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
                   {produto.nome}
                 </h3>
-                <p className="text-sm text-gray-500 mb-2">
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
                   Cód: {produto.codigo}
                 </p>
                 
                 <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-gray-500 dark:text-gray-400">
                     {produto.categoria || 'Sem categoria'}
                   </span>
                   <span className="badge badge-secondary">

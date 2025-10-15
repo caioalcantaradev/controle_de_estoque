@@ -44,8 +44,8 @@ const Estoque = () => {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Estoque</h1>
-          <p className="mt-1 text-sm text-gray-500">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Estoque</h1>
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
             Controle completo do estoque de produtos
           </p>
         </div>
@@ -67,10 +67,10 @@ const Estoque = () => {
               </div>
               <div className="ml-5 w-0 flex-1">
                 <dl>
-                  <dt className="text-sm font-medium text-gray-500 truncate">
+                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400 truncate">
                     Total em Estoque
                   </dt>
-                  <dd className="text-2xl font-semibold text-gray-900">
+                  <dd className="text-2xl font-semibold text-gray-900 dark:text-white">
                     {estoque?.totais?.totalQuantidade?.toLocaleString('pt-BR') || 0}
                   </dd>
                 </dl>
@@ -89,10 +89,10 @@ const Estoque = () => {
               </div>
               <div className="ml-5 w-0 flex-1">
                 <dl>
-                  <dt className="text-sm font-medium text-gray-500 truncate">
+                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400 truncate">
                     Estoque Baixo
                   </dt>
-                  <dd className="text-2xl font-semibold text-gray-900">
+                  <dd className="text-2xl font-semibold text-gray-900 dark:text-white">
                     {estoque?.totais?.estoqueBaixo || 0}
                   </dd>
                 </dl>
@@ -111,10 +111,10 @@ const Estoque = () => {
               </div>
               <div className="ml-5 w-0 flex-1">
                 <dl>
-                  <dt className="text-sm font-medium text-gray-500 truncate">
+                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400 truncate">
                     Sem Estoque
                   </dt>
-                  <dd className="text-2xl font-semibold text-gray-900">
+                  <dd className="text-2xl font-semibold text-gray-900 dark:text-white">
                     {estoque?.totais?.semEstoque || 0}
                   </dd>
                 </dl>
@@ -175,7 +175,7 @@ const Estoque = () => {
                 <tr>
                   <td colSpan="8" className="table-cell text-center py-12">
                     <Warehouse className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                    <p className="text-gray-500">Nenhum item no estoque</p>
+                    <p className="text-gray-500 dark:text-gray-400">Nenhum item no estoque</p>
                   </td>
                 </tr>
               ) : (
@@ -184,7 +184,7 @@ const Estoque = () => {
                     <td className="table-cell font-medium">
                       {item.produto?.nome || 'Produto não encontrado'}
                     </td>
-                    <td className="table-cell text-gray-500">
+                    <td className="table-cell text-gray-500 dark:text-gray-400">
                       {item.produto?.codigo || '-'}
                     </td>
                     <td className="table-cell">
@@ -196,7 +196,7 @@ const Estoque = () => {
                     <td className="table-cell text-right font-semibold">
                       {item.quantidade}
                     </td>
-                    <td className="table-cell text-right text-gray-500">
+                    <td className="table-cell text-right text-gray-500 dark:text-gray-400">
                       {item.quantidadeReservada || 0}
                     </td>
                     <td className="table-cell text-right font-semibold text-green-600">

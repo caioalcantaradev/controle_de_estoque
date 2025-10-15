@@ -22,8 +22,8 @@ const Configuracoes = () => {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Configurações</h1>
-        <p className="mt-1 text-sm text-gray-500">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Configurações</h1>
+        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
           Gerencie suas preferências e configurações do sistema
         </p>
       </div>
@@ -40,8 +40,8 @@ const Configuracoes = () => {
                     onClick={() => setActiveTab(tab.id)}
                     className={`w-full flex items-center space-x-3 px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                       activeTab === tab.id
-                        ? 'bg-primary-50 text-primary-700'
-                        : 'text-gray-700 hover:bg-gray-50'
+                        ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-400'
+                        : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
                     }`}
                   >
                     <tab.icon className="h-5 w-5" />
@@ -60,13 +60,13 @@ const Configuracoes = () => {
               {activeTab === 'perfil' && (
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                       Informações do Perfil
                     </h3>
                     
                     <div className="space-y-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                           Nome Completo
                         </label>
                         <input
@@ -77,7 +77,7 @@ const Configuracoes = () => {
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                           Email
                         </label>
                         <input
@@ -89,7 +89,7 @@ const Configuracoes = () => {
 
                       <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                             Função
                           </label>
                           <input
@@ -101,7 +101,7 @@ const Configuracoes = () => {
                         </div>
 
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                             Departamento
                           </label>
                           <input
@@ -119,7 +119,7 @@ const Configuracoes = () => {
 
               {activeTab === 'notificacoes' && (
                 <div className="space-y-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                     Preferências de Notificações
                   </h3>
                   
@@ -131,10 +131,10 @@ const Configuracoes = () => {
                         className="mt-1 h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                       />
                       <div>
-                        <div className="text-sm font-medium text-gray-900">
+                        <div className="text-sm font-medium text-gray-900 dark:text-white">
                           Alertas de Estoque Baixo
                         </div>
-                        <div className="text-sm text-gray-500">
+                        <div className="text-sm text-gray-500 dark:text-gray-400">
                           Receba notificações quando o estoque estiver abaixo do mínimo
                         </div>
                       </div>
@@ -147,10 +147,10 @@ const Configuracoes = () => {
                         className="mt-1 h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                       />
                       <div>
-                        <div className="text-sm font-medium text-gray-900">
+                        <div className="text-sm font-medium text-gray-900 dark:text-white">
                           Sincronização TOTVS
                         </div>
-                        <div className="text-sm text-gray-500">
+                        <div className="text-sm text-gray-500 dark:text-gray-400">
                           Notificações sobre sincronizações com o TOTVS
                         </div>
                       </div>
@@ -162,10 +162,10 @@ const Configuracoes = () => {
                         className="mt-1 h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                       />
                       <div>
-                        <div className="text-sm font-medium text-gray-900">
+                        <div className="text-sm font-medium text-gray-900 dark:text-white">
                           Relatórios Semanais
                         </div>
-                        <div className="text-sm text-gray-500">
+                        <div className="text-sm text-gray-500 dark:text-gray-400">
                           Receba relatórios semanais por email
                         </div>
                       </div>
@@ -178,10 +178,10 @@ const Configuracoes = () => {
                         className="mt-1 h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                       />
                       <div>
-                        <div className="text-sm font-medium text-gray-900">
+                        <div className="text-sm font-medium text-gray-900 dark:text-white">
                           Novos Produtos
                         </div>
-                        <div className="text-sm text-gray-500">
+                        <div className="text-sm text-gray-500 dark:text-gray-400">
                           Notificações quando novos produtos forem adicionados
                         </div>
                       </div>
@@ -192,13 +192,13 @@ const Configuracoes = () => {
 
               {activeTab === 'seguranca' && (
                 <div className="space-y-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                     Segurança da Conta
                   </h3>
                   
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Senha Atual
                       </label>
                       <input
@@ -209,7 +209,7 @@ const Configuracoes = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Nova Senha
                       </label>
                       <input
@@ -220,7 +220,7 @@ const Configuracoes = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Confirmar Nova Senha
                       </label>
                       <input
@@ -241,13 +241,13 @@ const Configuracoes = () => {
 
               {activeTab === 'integracao' && (
                 <div className="space-y-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                     Configurações de Integração TOTVS
                   </h3>
                   
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         URL Base TOTVS
                       </label>
                       <input
@@ -258,7 +258,7 @@ const Configuracoes = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         API Key
                       </label>
                       <input
@@ -269,7 +269,7 @@ const Configuracoes = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         ID da Empresa
                       </label>
                       <input
@@ -280,7 +280,7 @@ const Configuracoes = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Sincronização Automática
                       </label>
                       <select className="input w-full">
@@ -295,7 +295,7 @@ const Configuracoes = () => {
               )}
 
               {/* Save Button */}
-              <div className="mt-6 pt-6 border-t border-gray-200">
+              <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
                 <button
                   onClick={handleSave}
                   className="btn-primary btn-md flex items-center space-x-2"

@@ -258,14 +258,14 @@ const Dashboard = () => {
                       </div>
                       <div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
                         <div>
-                          <p className="text-sm text-gray-500">
+                          <p className="text-sm text-gray-500 dark:text-gray-400">
                             Sincronização com TOTVS concluída:{" "}
-                            <span className="font-medium text-gray-900">
+                            <span className="font-medium text-gray-900 dark:text-white">
                               150 produtos atualizados
                             </span>
                           </p>
                         </div>
-                        <div className="text-right text-sm whitespace-nowrap text-gray-500">
+                        <div className="text-right text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">
                           <time dateTime="2024-01-15">4 horas atrás</time>
                         </div>
                       </div>
@@ -282,14 +282,14 @@ const Dashboard = () => {
                       </div>
                       <div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
                         <div>
-                          <p className="text-sm text-gray-500">
+                          <p className="text-sm text-gray-500 dark:text-gray-400">
                             Estoque baixo detectado:{" "}
-                            <span className="font-medium text-gray-900">
+                            <span className="font-medium text-gray-900 dark:text-white">
                               5 produtos
                             </span>
                           </p>
                         </div>
-                        <div className="text-right text-sm whitespace-nowrap text-gray-500">
+                        <div className="text-right text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">
                           <time dateTime="2024-01-15">6 horas atrás</time>
                         </div>
                       </div>

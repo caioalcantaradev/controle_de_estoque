@@ -64,8 +64,8 @@ const Relatorios = () => {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Relatórios</h1>
-        <p className="mt-1 text-sm text-gray-500">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Relatórios</h1>
+        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
           Gere relatórios detalhados sobre estoque e movimentações
         </p>
       </div>
@@ -75,7 +75,7 @@ const Relatorios = () => {
         <div className="p-4">
           <div className="flex flex-col sm:flex-row gap-4 items-end">
             <div className="flex-1">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Período
               </label>
               <select
@@ -93,7 +93,7 @@ const Relatorios = () => {
             </div>
             
             <div className="flex-1">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Data Inicial
               </label>
               <input
@@ -104,7 +104,7 @@ const Relatorios = () => {
             </div>
 
             <div className="flex-1">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Data Final
               </label>
               <input
@@ -135,10 +135,10 @@ const Relatorios = () => {
                 </button>
               </div>
 
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 {report.name}
               </h3>
-              <p className="text-sm text-gray-500 mb-4">
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
                 {report.description}
               </p>
 
@@ -156,24 +156,24 @@ const Relatorios = () => {
       {/* Recent Reports */}
       <div className="card">
         <div className="p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
             Relatórios Recentes
           </h3>
           <div className="space-y-3">
             {[1, 2, 3].map((item) => (
               <div
                 key={item}
-                className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:border-gray-300 transition-colors"
+                className="flex items-center justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-gray-600 transition-colors"
               >
                 <div className="flex items-center space-x-4">
-                  <div className="p-2 rounded-lg bg-gray-100">
-                    <FileText className="h-5 w-5 text-gray-600" />
+                  <div className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700">
+                    <FileText className="h-5 w-5 text-gray-600 dark:text-gray-400" />
                   </div>
                   <div>
-                    <div className="text-sm font-medium text-gray-900">
+                    <div className="text-sm font-medium text-gray-900 dark:text-white">
                       Relatório de Estoque - {new Date().toLocaleDateString('pt-BR')}
                     </div>
-                    <div className="text-xs text-gray-500 mt-1">
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                       Gerado há {item} hora(s) atrás
                     </div>
                   </div>
