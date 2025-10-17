@@ -28,7 +28,7 @@ const Sidebar = ({ isOpen, onClose }) => {
             <div className="flex h-full flex-col">
               {/* Header */}
               <div className="flex h-16 items-center justify-between px-4">
-                <Logo size="md" variant="full" />
+                <Logo size="md" variant="full" theme="white" />
                 <button
                   type="button"
                   className="rounded-md p-2 text-gray-400 hover:text-gray-500"
@@ -73,7 +73,7 @@ const Sidebar = ({ isOpen, onClose }) => {
         <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700">
           {/* Header */}
           <div className="flex h-16 items-center px-4">
-            <Logo size="md" variant="full" />
+            <Logo size="md" variant="full" theme="white" />
           </div>
 
           {/* Navigation */}

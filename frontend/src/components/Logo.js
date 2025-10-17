@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Logo = ({ size = 'md', variant = 'full', className = '' }) => {
+const Logo = ({ size = 'md', variant = 'full', className = '', theme = 'blue' }) => {
   // Tamanhos disponíveis - ajustados para logo retangular
   const sizes = {
     sm: 'h-6 w-auto', // w-auto mantém proporção
@@ -67,11 +67,18 @@ const Logo = ({ size = 'md', variant = 'full', className = '' }) => {
   }
 
   // Tentar carregar a logo
+  const logoSrc = "/controle_de_estoque/logo.png";
+  
+  // Para logo branca, usar CSS filter para inverter as cores
+  const logoClassName = theme === 'white' 
+    ? `${sizes[size]} ${className} brightness-0 invert`
+    : `${sizes[size]} ${className}`;
+    
   return (
     <img
-      src="/controle_de_estoque/logo.png"
+      src={logoSrc}
       alt="CROSBY Logo"
-      className={`${sizes[size]} ${className}`}
+      className={logoClassName}
       onError={() => setLogoError(true)}
       onLoad={() => setLogoError(false)}
     />
