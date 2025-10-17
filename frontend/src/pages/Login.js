@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Eye, EyeOff } from "lucide-react";
 import { useAuth } from "../contexts/AuthContext";
 import Logo from "../components/Logo";
+
+// Import das imagens de background
+import loginDesktop from "../assets/login-desktop.jpg";
+import loginMobile from "../assets/login-mobile.jpg";
 
 const Login = () => {
   const { login, isAuthenticated, loading } = useAuth();
@@ -45,18 +49,18 @@ const Login = () => {
       {/* Background Image - Desktop */}
       <div className="hidden lg:block absolute inset-0">
         <img
-          src="/login-desktop.jpg"
+          src={loginDesktop}
           alt="Background"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-left"
         />
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/30"></div>
       </div>
 
       {/* Background Image - Mobile */}
       <div className="lg:hidden absolute inset-0">
         <img
-          src="/login-mobile.jpg"
+          src={loginMobile}
           alt="Background"
           className="w-full h-full object-cover"
         />
@@ -64,29 +68,29 @@ const Login = () => {
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
-      {/* Right side pattern */}
-      <div className="absolute right-0 top-0 w-32 h-full bg-white/10 backdrop-blur-sm">
+      {/* Left side pattern - expanded */}
+      <div className="absolute left-0 top-0 w-64 h-full bg-white/10 backdrop-blur-sm">
         <div
           className="w-full h-full opacity-20"
           style={{
             backgroundImage:
               "radial-gradient(circle, #000 1px, transparent 1px)",
-            backgroundSize: "20px 20px",
+            backgroundSize: "25px 25px",
           }}
         ></div>
       </div>
 
-      {/* Curved blue shape */}
-      <div className="absolute right-32 top-0 w-16 h-full">
+      {/* Curved blue shape - inverted */}
+      <div className="absolute left-64 top-0 w-20 h-full">
         <svg
           className="w-full h-full"
-          viewBox="0 0 64 100"
+          viewBox="0 0 80 100"
           preserveAspectRatio="none"
         >
           <path
-            d="M0,0 Q32,50 0,100 L64,100 L64,0 Z"
+            d="M80,0 Q40,50 80,100 L0,100 L0,0 Z"
             fill="#1e40af"
-            opacity="0.1"
+            opacity="0.15"
           />
         </svg>
       </div>
@@ -195,15 +199,6 @@ const Login = () => {
                 </button>
               </div>
 
-              {/* Alterar empresa */}
-              <div className="text-center">
-                <a
-                  href="#"
-                  className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
-                >
-                  Alterar empresa
-                </a>
-              </div>
             </form>
           </div>
         </div>
