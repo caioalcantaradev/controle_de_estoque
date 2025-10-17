@@ -47,14 +47,12 @@ const Login = () => {
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Background Image - Desktop */}
-      <div className="hidden lg:block absolute inset-0">
+      <div className="hidden lg:block absolute inset-0 right-80">
         <img
           src={loginDesktop}
           alt="Background"
-          className="w-full h-full object-cover object-left"
+          className="w-full h-full object-cover object-center"
         />
-        {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/30"></div>
       </div>
 
       {/* Background Image - Mobile */}
@@ -64,41 +62,26 @@ const Login = () => {
           alt="Background"
           className="w-full h-full object-cover"
         />
-        {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
-      {/* Left side pattern - expanded */}
-      <div className="absolute left-0 top-0 w-64 h-full bg-white/10 backdrop-blur-sm">
-        <div
-          className="w-full h-full opacity-20"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, #000 1px, transparent 1px)",
-            backgroundSize: "25px 25px",
-          }}
-        ></div>
-      </div>
+      {/* White gap filler */}
+      <div className="absolute right-0 top-0 w-96 h-full bg-white z-30"></div>
 
-      {/* Curved blue shape - inverted */}
-      <div className="absolute left-64 top-0 w-20 h-full">
+      {/* Curved blue shape - cutting the background */}
+      <div className="absolute right-80 top-0 w-20 h-full z-40">
         <svg
           className="w-full h-full"
-          viewBox="0 0 80 100"
+          viewBox="0 0 110 100"
           preserveAspectRatio="none"
         >
-          <path
-            d="M80,0 Q40,50 80,100 L0,100 L0,0 Z"
-            fill="#1e40af"
-            opacity="0.15"
-          />
+          <path d="M80,0 Q40,50 80,100 L0,100 L0,0 Z" fill="#1e40af" />
         </svg>
       </div>
 
       {/* Login Form */}
-      <div className="relative z-10 min-h-screen flex items-center justify-end pr-8 lg:pr-16">
+      <div className="relative z-50 min-h-screen flex items-center justify-end pr-8 lg:pr-16">
         <div className="w-full max-w-md">
-          <div className="bg-white rounded-2xl shadow-2xl p-8 backdrop-blur-sm bg-white/95">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 backdrop-blur-sm bg-white/95 border border-[#000638]">
             {/* Logo */}
             <div className="flex justify-center mb-8">
               <Logo size="lg" variant="full" />
@@ -113,7 +96,7 @@ const Login = () => {
                       required: "Usuário é obrigatório",
                     })}
                     type="text"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 border-2 border-[#000638] rounded-lg focus:ring-2 focus:ring-[#000638] focus:border-[#000638] outline-none transition-all"
                     placeholder="Usuário"
                   />
                   {errors.email && (
@@ -134,7 +117,7 @@ const Login = () => {
                       },
                     })}
                     type={showPassword ? "text" : "password"}
-                    className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 pr-12 border-2 border-[#000638] rounded-lg focus:ring-2 focus:ring-[#000638] focus:border-[#000638] outline-none transition-all"
                     placeholder="Senha"
                   />
                   <button
@@ -171,7 +154,7 @@ const Login = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full btn12 font-bold py-3 px-6 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <div className="flex items-center">
@@ -179,26 +162,10 @@ const Login = () => {
                       Entrando...
                     </div>
                   ) : (
-                    <>
-                      <span>ENTRAR</span>
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </>
+                    <span>ENTRAR</span>
                   )}
                 </button>
               </div>
-
             </form>
           </div>
         </div>
