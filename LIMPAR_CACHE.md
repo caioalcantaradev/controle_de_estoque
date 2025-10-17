@@ -1,58 +1,30 @@
-# 🔄 Como Limpar Cache do Navegador
+# Como Limpar o Cache do Navegador
 
-## ❌ **PROBLEMA:**
+Se você não está vendo as alterações na tela de login, siga estes passos para limpar o cache:
 
-O login ainda dá erro porque o navegador está usando a versão antiga (cache).
+## Chrome/Edge:
+1. Pressione `Ctrl + Shift + R` (hard refresh)
+2. Ou pressione `F12` para abrir DevTools
+3. Clique com botão direito no botão de refresh
+4. Selecione "Esvaziar cache e recarregar forçadamente"
 
-## ✅ **SOLUÇÃO:**
+## Firefox:
+1. Pressione `Ctrl + Shift + R`
+2. Ou pressione `Ctrl + F5`
 
-### **1. Limpar Cache do Navegador:**
+## Safari:
+1. Pressione `Cmd + Shift + R`
+2. Ou vá em Desenvolver > Esvaziar Caches
 
-#### **Chrome/Edge:**
-```
-1. Pressione: Ctrl + Shift + R (ou Cmd + Shift + R no Mac)
-2. Ou: F12 → Network → Disable cache → F5
-3. Ou: Ctrl + H → Limpar dados de navegação
-```
+## Alternativa - Modo Incógnito:
+Abra uma janela anônima/privada para testar sem cache.
 
-#### **Firefox:**
-```
-1. Pressione: Ctrl + Shift + R
-2. Ou: Ctrl + Shift + Delete → Limpar cache
-```
+## Verificar se o servidor está rodando:
+- Acesse: http://localhost:3000
+- Certifique-se de que o servidor React está rodando
 
-### **2. Abrir em Modo Incógnito:**
-```
-Chrome: Ctrl + Shift + N
-Firefox: Ctrl + Shift + P
-Edge: Ctrl + Shift + InPrivate
-```
-
-### **3. Aguardar 2-3 minutos:**
-```
-O GitHub Pages pode demorar para atualizar
-```
-
-## 🎯 **TESTE:**
-
-1. **Limpe o cache** (Ctrl + Shift + R)
-2. **Acesse:** https://caioalcantaradev.github.io/controle_de_estoque/
-3. **Faça login:**
-   - Email: admin@crosby.com.br
-   - Senha: admin123
-4. **Deve funcionar!** ✅
-
-## 🔧 **SE AINDA NÃO FUNCIONAR:**
-
-### **Teste em modo incógnito:**
-- Abra uma aba privada
-- Acesse o sistema
-- Tente fazer login
-
-### **Verifique se está na versão correta:**
-- O login deve demorar 1 segundo (simula rede)
-- Deve aparecer "Login realizado com sucesso!"
-
----
-
-**O problema é cache do navegador, não o código!** 🚀
+## Se ainda não funcionar:
+1. Pare o servidor (Ctrl+C no terminal)
+2. Execute: `cd frontend && npm start`
+3. Aguarde a compilação completa
+4. Acesse novamente
